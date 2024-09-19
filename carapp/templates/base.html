@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="static/css/style.css">
+    <script type="text/javascript" src="static/js/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header {% block header_class %}{% endblock %}">
+            <div class="container">
+                <div class="header_inner">
+                    <a href="{{ url_for('index') }}" class="logo">
+
+                        <img src="static/images/logo.svg" alt="" class="logo_img">
+                    </a>
+                    <nav class="menu">
+                        <ul class="menu_list">
+
+                            {% for item in navmenu %}
+                                <li class="menu_list-item">
+                                    <a href="{{ item.addr }}" id="nav" class="menu_list-link {% if item.addr == request.path %}active{% endif %}">{{ item.name }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        {% block content %}{% endblock %}
+       
+        
+        <footer class="footer">
+            <div class="container">
+                <nav class="footer_menu">
+                    <ul class="footer_menu-list">
+                        <li class="footer_menu-item"><p class="footer_menu-title">Products</p></li>
+                        <li class="footer_menu-item"><a href="#" class="footer_menu-link"></a>Used</li>
+                        <li class="footer_menu-item"><a href="#" class="footer_menu-link"></a>New</li>
+                        <li class="footer_menu-item"><a href="#" class="footer_menu-link"></a>Sell your car</li>
+                    </ul>
+                    <ul class="footer_menu-list">
+                        <li class="footer_menu-item"><p class="footer_menu-title">Resources</p></li>
+                        <li class="footer_menu-item"><a href="#" class="footer_menu-link">Resources</a></li>
+                        <li class="footer_menu-item"><a href="#" class="footer_menu-link">FAQ</a></li>
+                        <li class="footer_menu-item"><a href="#" class="footer_menu-link">Contact us</a></li>
+                    </ul>
+                    <ul class="footer_menu-list">
+                        <li class="footer_menu-item"><p class="footer_menu-title">Work With TrueCar</p></li>
+                        <li class="footer_menu-item"><a href="#" class="footer_menu-link">Dealers</a></li>
+                        <li class="footer_menu-item"><a href="#" class="footer_menu-link">Partners</a></li>
+                    </ul>
+                    <ul class="footer_menu-list">
+                        <li class="footer_menu-item"><p class="footer_menu-title">About</p></li>
+                        <li class="footer_menu-item"><a href="#" class="footer_menu-link">About us</a></li>
+                        <li class="footer_menu-item"><a href="#" class="footer_menu-link">Team</a></li>
+                        <li class="footer_menu-item"><a href="#" class="footer_menu-link">Careers</a></li>
+                    </ul>
+                </nav>
+                <ul class="app">
+                    <li class="app_item">
+                        <a href="#" class="app_item-link">
+                            <img src="static/images/appstore.svg" alt="" class="app_item-img">
+                        </a>
+                    </li>
+                    <li class="app_item">
+                        <a href="#" class="app_item-link">
+                            <img src="static/images/googleplay.svg" alt="" class="app_item-img">
+                        </a>
+                    </li>
+                </ul>
+                <div class="footer_copy">
+                    <p class="footer_copy-text">
+                        For questions about the TrueCar Auto Buying Service please call 1-888-878-3227.
+                        Certified Dealers are contractually obligated by TrueCar to meet certain customer service requirements and complete the TrueCar Dealer Certification Program.
+                    </p>
+                    <p class="footer_copy-text">
+                        TrueCar does not broker, sell, or lease motor vehicles. Unless otherwise noted, all vehicles shown on this website
+                        are offered for sale by licensed motor vehicle dealers. All vehicles are subject to prior sale. By accessing this 
+                        website, you agree to the TrueCar Terms of Service and Privacy Policy.
+                    </p>
+                </div>
+                <nav class="copy_nav">
+                    <ul class="copy_nav-list">
+                        <li class="copy_nav-item"><a href="#" class="copy_nav-link">Terms of Service</a></li>
+                        <li class="copy_nav-item"><a href="#" class="copy_nav-link">Privacy Policy</a></li>
+                        <li class="copy_nav-item"><a href="#" class="copy_nav-link">Do Not Sell My Personal Information</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </footer>
+
+
+    </div>
+
+    
+    {% block scripts %}{% endblock %}
+</body>
+</html>

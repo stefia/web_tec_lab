@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <main class="main">
+        <section class="auth">
+            <div class="container">
+                <h2 class="section_title auth_title">
+                    Login
+                </h2>
+                <div class="auth_text">
+                    Please, enter login and password
+                </div>
+                <form method="POST" action="/login" class="form" id="consultation-form">
+                    <input  name="login" type="text" class="form_input name" placeholder="Login">
+                    <input name="password" type="password" class="form_input" placeholder="Password">
+                    
+                    <button id="form_btn" class="form_btn" type="submit">Sign in</button>
+                    
+                </form>
+                <a href="/register" id="login_link"><b>Sign up</b></a>
+            </div>
+        </section>
+
+        
+    </main>
+{% endblock %}
+
+    
+{% block scripts %}
+    <script src="static/js/main.js"></script>
+{% endblock %}
+        

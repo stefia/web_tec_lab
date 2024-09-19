@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <main class="main">
+        <section class="contacts">
+            <div class="container">
+                <h2 class="section_title contacts_title">
+                    Contact Us
+                </h2>
+                <div class="contacts_text">
+                    Feel free to contact us with questions, potencial partnerships or media inquiries
+                </div>
+                <form action="#" class="form" id="consultation-form">
+                    <input  name="name" type="text" class="form_input name" placeholder="Name">
+                    <input name="email" type="email" class="form_input" placeholder="E-mail">
+                    <textarea name="text" class="form_textarea" id="" cols="30" rows="3" placeholder="Your text"></textarea>
+                    <p id="result-form"></p>
+                    <button id="form_btn" class="form_btn" type="submit">SUBMIT</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="blog">
+            <div class="container">
+                <div class="blog_items">
+                    <div class="blog_item">
+                        <img src="static/images/blog_1.jpg" alt="" class="blog_item-img">
+                        <h4 class="blog_item-title">An easier way to buy your next Toyota</h4>
+                        <a href="" class="blog_item-link">more</a>
+                    </div>
+                    <div class="blog_item">
+                        <img src="static/images/blog_2.jpg" alt="" class="blog_item-img">
+                        <h4 class="blog_item-title">A Guide to Road-Tripping With Pets</h4>
+                        <a href="" class="blog_item-link">more</a>
+                    </div>
+                </div>
+                <a href="" class="showmore-link">SHOW MORE</a>
+            </div>
+        </section>
+    </main>
+{% endblock %}
+
+    
+{% block scripts %}
+    <script src="static/js/main.js"></script>
+    <script src="static/js/contact.js"></script>
+{% endblock %}
+        
